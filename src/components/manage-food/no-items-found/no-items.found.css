@@ -1,0 +1,9 @@
+.no-items-found-container {
+  margin: 22px 0px;
+  margin-right: 50px;
+}
+
+.no-items-found-container img {
+  width: 150px;
+  height: 150px;
+}

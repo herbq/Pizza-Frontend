@@ -1,0 +1,12 @@
+.hidden {
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.hidden-in {
+    opacity: 0;
+}
+
+.hidable {
+    transition: .5s all;
+}

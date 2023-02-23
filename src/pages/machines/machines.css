@@ -1,0 +1,21 @@
+.machines-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 150px;
+}
+
+
+.cards-container {
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cards-container .card-container {
+    margin-left: 40px;
+}
+
+.cards-container .card-container:nth-child(n+6) {
+    margin-top: 30px;
+}

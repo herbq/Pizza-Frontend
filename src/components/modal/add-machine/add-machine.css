@@ -1,0 +1,14 @@
+.modal-container .new-machine.body {
+  margin-top: 25px;
+}
+
+.modal-container .new-machine.body p {
+  margin-top: 10px;
+  margin-bottom: -20px;
+  color: red;
+  font-size: 15px;
+}
+
+.invisible {
+  visibility: hidden;
+}

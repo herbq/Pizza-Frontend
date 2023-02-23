@@ -1,0 +1,55 @@
+.home-page section.about-us-container {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+}
+
+.home-page section.about-us-container > div:first-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 70%;
+}
+
+.home-page section.about-us-container > div:first-child p.title,
+.home-page section.about-us-container > div:first-child p.subtitle {
+  color: rgb(71, 71, 71);
+  text-align: left;
+  margin-left: 70px;
+}
+
+.home-page section.about-us-container > div:first-child p.title {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin-top: 5px;
+  font-size: 27px;
+  width: 400px;
+  font-weight: 600;
+  text-align: left;
+}
+
+.home-page section.about-us-container > div:first-child button {
+  font-weight: 600;
+  font-size: 15px;
+  color: white;
+  width: 160px;
+  height: 45px;
+  background-color: rgba(230, 119, 0, 0.704);
+  margin-top: 20px;
+  margin-left: 70px;
+}
+
+.home-page section.about-us-container > div:first-child p.subtitle {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin-top: 12px;
+  font-size: 19px;
+  width: 500px;
+  text-align: left;
+  border-bottom: 1px solid gray;
+  padding-bottom: 20px;
+}
+
+.home-page section.about-us-container > div:last-child {
+  margin-top: 20px;
+  width: 50%;
+  height: 100%;
+}

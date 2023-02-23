@@ -1,0 +1,144 @@
+.card-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: white;
+    width: 230px;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    overflow: hidden;
+    transition: .3s all;
+    min-height: 320px;
+}
+
+.card-container.btn {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.card-container.btn p {
+    margin-top: 20px;
+}
+
+.card-container:hover {
+    transform: translateY(-2px);
+    scale: 1.01;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.3);
+}
+
+.card-container:active {
+    scale: 0.99;
+}
+
+.card-container .header {
+    position: relative;
+    width: 220px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.card-container .header img {
+    width: 220px;
+    position: absolute;
+    top: 0;
+    left: 0px;
+    transition: .3s all;
+}
+
+.card-container:hover .header img {
+    transform: translateY(-5px);
+}
+
+.card-container .content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 10px;
+    width: 90%;
+}
+
+.card-container .title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 10px;
+    color: rgb(45, 45, 45);
+    padding-bottom: 5px;
+}
+
+.card-container .content span.sub-title {
+    color: rgb(202, 135, 10);
+    font-weight: 600;
+}
+
+.card-container p {
+    font-size: 14px;
+    text-align: left;
+    margin-top: 2px;
+    color: rgb(101, 101, 101);
+}
+
+.card-container p:first-child {
+    margin-top: 0px;
+}
+
+.card-container p.online {
+    color: #81b151;
+}
+
+.card-container p.offline {
+    color: rgb(204, 22, 22);
+}
+
+.card-container .footer {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.card-container .footer .indicator {
+    background-color: orange;
+    width: 50%;
+    height: 5px;
+    border-radius: 100px;
+    margin-top: 25px;
+    margin-bottom: 8px;
+    transition: .3s all;
+}
+
+.card-container .indicator-text {
+    position: absolute;
+    top: 13px;
+    transform: translateY(20px);
+    transition: .3s all;
+}
+
+.card-container .footer .indicator.red {
+    background-color: #e56b6f;
+}
+
+.card-container:hover .footer .indicator.red {
+    transform: translateY(-15px);
+}
+
+.card-container:hover .footer .indicator {
+    width: 52%
+}
+
+.card-container:hover .footer:has(.indicator.red) .indicator-text {
+    transform: translateY(0px);
+}
+
+.card-container:active .footer .indicator.red {
+    transform: translateY(-17px);
+}
+
+.card-container:active .footer:has(.indicator.red) .indicator-text {
+    transform: translateY(-2px);
+}
