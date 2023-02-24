@@ -5,10 +5,11 @@ interface IProps {
   title: string,
   description: string,
   backgroundColor: string,
+  className?: string,
 }
 
-const FeatureCard = ({ title, description, image, backgroundColor }: IProps) => {
-  return <div className="feature-card-container" style={{ backgroundColor }}>
+const FeatureCard = ({ title, description, image, backgroundColor, className }: IProps) => {
+  return <div className={`feature-card-container ${className}`} style={{ backgroundColor }}>
     <img src={image} alt="" />
     <div className="content">
       <h2 className='title'>{title}</h2>

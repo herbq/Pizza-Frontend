@@ -15,7 +15,10 @@ section.ratings-list-container {
   width: 100%;
   height: 300px;
   overflow: scroll;
-  animation: 7s showFromLeft;
+}
+
+.ratings-list.in-view {
+  animation: 7s cubic-bezier(0.1, 0.33, 0.56, 0.94) showFromLeft;
 }
 
 .ratings-list::-webkit-scrollbar {
@@ -24,7 +27,7 @@ section.ratings-list-container {
 
 @keyframes showFromLeft {
   from {
-    transform: translateX(110%);
+    transform: translateX(70%);
   }
 
   to {

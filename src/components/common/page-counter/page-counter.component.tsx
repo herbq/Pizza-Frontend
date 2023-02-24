@@ -14,7 +14,7 @@ interface IProps {
 
 const PageCounter = ({ currentPageNum, setCurrentPageNum, totalPages, available }: IProps) => {
     return <div className="page-counter">
-        <ShowTimer timeout={1000} animationType={AnimationType.FADE_UP}><Button className='hidable' disabled={!available.prev} onClick={() => { setCurrentPageNum(0) }}><FontAwesomeIcon icon={faAnglesLeft} fontSize={14} /></Button></ShowTimer>
+        <ShowTimer timeout={1000} animationType={AnimationType.FADE_UP}><Button disabled={!available.prev} onClick={() => { setCurrentPageNum(0) }}><FontAwesomeIcon icon={faAnglesLeft} fontSize={14} /></Button></ShowTimer>
         <ShowTimer timeout={900} animationType={AnimationType.FADE_UP}><Button disabled={!available.prev} onClick={() => { setCurrentPageNum(currentPageNum - 1) }}><FontAwesomeIcon icon={faAngleLeft} fontSize={14} />&nbsp;</Button></ShowTimer>
         <ShowTimer timeout={800} animationType={AnimationType.FADE_UP}><Button>{totalPages != 0 ? `${currentPageNum + 1}/${totalPages}` : `-/-`}</Button></ShowTimer>
         <ShowTimer timeout={900} animationType={AnimationType.FADE_UP}><Button disabled={!available.next} onClick={() => { setCurrentPageNum(currentPageNum + 1) }}>&nbsp;<FontAwesomeIcon icon={faAngleRight} fontSize={14} /></Button></ShowTimer>

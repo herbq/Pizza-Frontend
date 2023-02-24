@@ -24,7 +24,7 @@ const FoodTable = ({ className }: { className?: string }) => {
         fetchFoodList();
     }, [])
 
-    return <ShowTimer timeout={0} animationType={AnimationType.FADE_UP}><div className={`food-table-container hidable`}>
+    return <ShowTimer timeout={0} animationType={AnimationType.FADE_UP}><div className={`food-table-container`}>
         <div className='header'>
             <SearchBar disabled={false}></SearchBar>
             <Button onClick={() => { modals.openAddFoodModal() }}><FontAwesomeIcon icon={faPlus} fontSize={14} color="white" /> Add New</Button>

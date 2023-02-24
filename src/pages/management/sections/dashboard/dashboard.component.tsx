@@ -6,6 +6,7 @@ import SectionsNav from '../../../../components/management/dashboard/sections-na
 import dashImg1 from '../../../../assets/dashimg1.png'
 import dashImg2 from '../../../../assets/dashimg2.png'
 import dashImg3 from '../../../../assets/dashimg3.png'
+import { faWarning } from '@fortawesome/free-solid-svg-icons';
 
 const DashboardSection = () => {
   return <div className="dashboard-section">
@@ -25,7 +26,7 @@ const DashboardSection = () => {
             <InfoCard image={dashImg3} backgroundColor="#f2a0ff2e" title="Completed Orders" info="50"></InfoCard>
             <InfoCard image={dashImg2} backgroundColor="#0bf4c82e" mini={true} title="Completed Orders" info="50"></InfoCard>
           </div>
-          <SlidingList></SlidingList>
+          <SlidingList icon={faWarning} title="Warnings"></SlidingList>
         </div>
       </div>
     </div>

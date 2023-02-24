@@ -13,9 +13,9 @@ const Modal = () => {
         console.log(`qweqweqweqwe`)
     };
 
-    return <ShowTimer timeout={0} animationType={AnimationType.FADE_IN}><div className="modal-container hidable">
+    return <ShowTimer timeout={0} animationType={AnimationType.FADE_IN}><div className="modal-container">
         <ShowTimer timeout={0}>
-            <div className='modal hidable'>
+            <div className='modal'>
                 <div className="header">
                     <p className='title'>{modalProps?.header?.title}</p>
                     <p className='text'>{modalProps?.header?.subtitle}</p>

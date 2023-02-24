@@ -4,21 +4,21 @@
   width: 70%;
 }
 
-.home-page section.about-us-container > div:first-child {
+.home-page section.about-us-container>div:first-child {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   width: 70%;
 }
 
-.home-page section.about-us-container > div:first-child p.title,
-.home-page section.about-us-container > div:first-child p.subtitle {
+.home-page section.about-us-container>div:first-child p.title,
+.home-page section.about-us-container>div:first-child p.subtitle {
   color: rgb(71, 71, 71);
   text-align: left;
   margin-left: 70px;
 }
 
-.home-page section.about-us-container > div:first-child p.title {
+.home-page section.about-us-container>div:first-child p.title {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   margin-top: 5px;
   font-size: 27px;
@@ -27,7 +27,7 @@
   text-align: left;
 }
 
-.home-page section.about-us-container > div:first-child button {
+.home-page section.about-us-container>div:first-child .button {
   font-weight: 600;
   font-size: 15px;
   color: white;
@@ -38,7 +38,7 @@
   margin-left: 70px;
 }
 
-.home-page section.about-us-container > div:first-child p.subtitle {
+.home-page section.about-us-container>div:first-child p.subtitle {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   margin-top: 12px;
   font-size: 19px;
@@ -48,7 +48,7 @@
   padding-bottom: 20px;
 }
 
-.home-page section.about-us-container > div:last-child {
+.home-page section.about-us-container>div:last-child {
   margin-top: 20px;
   width: 50%;
   height: 100%;

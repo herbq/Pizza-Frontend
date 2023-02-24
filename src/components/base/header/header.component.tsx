@@ -26,9 +26,9 @@ const Header = () => {
 
       <div className="left-nav">
         <ShowTimer timeout={0} animationType={AnimationType.FADE_IN}><Logo></Logo></ShowTimer>
-        <ShowTimer timeout={100} animationType={AnimationType.FADE_IN}><HeaderButton className={`hidable ${pathname.includes(`/home`) ? `selected` : ``}`} to="/home">Home</HeaderButton></ShowTimer>
-        <ShowTimer timeout={200} animationType={AnimationType.FADE_IN}><HeaderButton className={`hidable ${pathname.includes(`/machines`) ? `selected` : ``}`} to="/machines">My Machines</HeaderButton></ShowTimer>
-        <ShowTimer timeout={300} animationType={AnimationType.FADE_IN}><HeaderButton className={`hidable ${pathname.includes(`/manage-food`) ? `selected` : ``}`} to="/manage-food">Manage Food</HeaderButton></ShowTimer>
+        <ShowTimer timeout={100} animationType={AnimationType.FADE_IN}><HeaderButton className={`${pathname.includes(`/home`) ? `selected` : ``}`} to="/home">Home</HeaderButton></ShowTimer>
+        <ShowTimer timeout={200} animationType={AnimationType.FADE_IN}><HeaderButton className={`${pathname.includes(`/machines`) ? `selected` : ``}`} to="/machines">My Machines</HeaderButton></ShowTimer>
+        <ShowTimer timeout={300} animationType={AnimationType.FADE_IN}><HeaderButton className={`${pathname.includes(`/manage-food`) ? `selected` : ``}`} to="/manage-food">Manage Food</HeaderButton></ShowTimer>
       </div>
 
       <div className="right-nav">
@@ -38,10 +38,10 @@ const Header = () => {
         </div>} */}
 
         {user == null ?
-          <ShowTimer timeout={500} animationType={AnimationType.FADE_IN}><HeaderButton className={`hidable ${pathname.includes(`/login`) ? `selected` : ``}`} to="/login">Sign In</HeaderButton></ShowTimer> :
+          <ShowTimer timeout={500} animationType={AnimationType.FADE_IN}><HeaderButton className={`${pathname.includes(`/login`) ? `selected` : ``}`} to="/login">Sign In</HeaderButton></ShowTimer> :
           <HeaderButton to="/login" onClick={() => { logout() }} animationType={AnimationType.FADE_IN}>Logout</HeaderButton>}
 
-        <ShowTimer timeout={600} animationType={AnimationType.FADE_IN}><HeaderButton className={`hidable inverted ${pathname.includes(`/login`) ? `selected ` : ``}`} to="/login"><FontAwesomeIcon icon={faPizzaSlice} fontSize={18} color="white" /> Join Now!</HeaderButton></ShowTimer>
+        <ShowTimer timeout={600} animationType={AnimationType.FADE_IN}><HeaderButton className={`inverted ${pathname.includes(`/login`) ? `selected ` : ``}`} to="/login"><FontAwesomeIcon icon={faPizzaSlice} fontSize={18} color="white" /> Join Now!</HeaderButton></ShowTimer>
       </div>
 
     </div>

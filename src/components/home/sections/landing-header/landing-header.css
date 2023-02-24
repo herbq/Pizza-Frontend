@@ -1,0 +1,73 @@
+.home-page>.header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  top: -65px;
+  width: 100%;
+  height: min(75vh, 600px);
+  background-image: url('../../../../assets/landing-header.png');
+  background-size: 100%;
+  object-fit: fill;
+  animation: 1.5s bgMoveUp forwards;
+}
+
+.home-page>.header .content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 11%;
+  margin-top: 20px;
+}
+
+.home-page>.header h1 span {
+  color: #e78010;
+  font-family: 'KGBrokenVessels';
+  font-weight: 200;
+  font-size: 90px;
+}
+
+.home-page>.header p {
+  font-family: 'Shadows Into Light', cursive;
+  color: white;
+  font-size: 25px;
+
+  line-height: 1.5;
+  display: inline;
+  background-image: linear-gradient(orange 50%,
+      transparent 85%,
+      transparent 100%);
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  background-position-y: 35px;
+  animation: animatedBackground 2s cubic-bezier(0.645, 0.045, 0.355, 1) 0.5s forwards;
+  animation-delay: 2s;
+}
+
+.home-page>.header button {
+  font-weight: 500;
+  font-size: 18px;
+  color: white;
+  width: 160px;
+  height: 45px;
+  background-color: rgba(230, 119, 0, 0.704);
+  margin-top: 40px;
+  border: none;
+}
+
+
+@keyframes bgMoveUp {
+  from {
+    background-position-y: -38px;
+  }
+
+  to {
+    background-position-y: -45px;
+  }
+}
+
+@keyframes animatedBackground {
+  to {
+    background-size: 100% 100%;
+  }
+}

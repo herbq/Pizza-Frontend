@@ -1,6 +1,8 @@
 import './ratings-list.css'
 import KnifeTitle from '../../knife-title/knife-title.component';
 import RatingCard from './rating-card/rating-card.component';
+import { useState } from 'react';
+import useScroll from '../../../../hooks/scroll.hook';
 
 const RatingsListSection = () => {
 
@@ -112,10 +114,14 @@ const RatingsListSection = () => {
     }
   ]
 
-  return <section className="ratings-list-container">
+  const [elementRef, setElementRef] = useState(null);
+
+  const isInView = useScroll(elementRef)
+
+  return <section ref={setElementRef as any} className="ratings-list-container">
     <KnifeTitle text={`Buyers Reviews`} column={true}></KnifeTitle>
     <div className="ratings-list-wrapper">
-      <div className="ratings-list">
+      <div className={`ratings-list${isInView ? ` in-view` : ``}`}>
         {
           ratings.map((rate) => <RatingCard image={rate.image} name={rate.name} job={rate.job} title={rate.title} description={rate.description} stars={rate.stars}></RatingCard>)
         }

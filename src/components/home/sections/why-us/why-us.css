@@ -1,0 +1,20 @@
+.why-us-container {
+  margin-top: 50px;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 530px;
+}
+
+.why-us-container .cards {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+}
+
+.why-us-container .numbers {
+  display: flex;
+  justify-content: space-between;
+  width: 45%;
+}

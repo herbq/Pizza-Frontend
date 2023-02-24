@@ -11,7 +11,7 @@ const LoginPage = () => {
     // if (user != null) navigate(`/home`)
     return (
         <ShowTimer timeout={0}>
-            <div className="login-page hidable">
+            <div className="login-page">
                 <LoginForm></LoginForm>
                 {/* {user == null ? <LoginForm></LoginForm> : <Navigate to="/home" replace />} */}
             </div>

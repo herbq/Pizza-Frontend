@@ -1,5 +1,6 @@
 .knife-title-container {
   display: flex;
+  margin-bottom: 10px;
 }
 
 .knife-title-container img {

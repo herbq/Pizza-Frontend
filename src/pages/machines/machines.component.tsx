@@ -39,7 +39,7 @@ const MachinesPage = () => {
                     },
                     body: <MachineInfoModal machine={machine}></MachineInfoModal>
                 }
-                return <ShowTimer timeout={50 * i}><Card showModal={() => { setModalProps(modalProps) }} className="hidable" machine={machine} img={`https://cdn.discordapp.com/attachments/990816819654852648/1073863781681213531/INV_A_front_view_of_a_modern_pizza_vending_machine_with_a_touc_e53f5254-2376-40e7-9c35-9922d41058c6.png`}></Card></ShowTimer>
+                return <ShowTimer timeout={50 * i}><Card showModal={() => { setModalProps(modalProps) }} machine={machine} img={`https://cdn.discordapp.com/attachments/990816819654852648/1073863781681213531/INV_A_front_view_of_a_modern_pizza_vending_machine_with_a_touc_e53f5254-2376-40e7-9c35-9922d41058c6.png`}></Card></ShowTimer>
             })}
             {machines && <ShowTimer timeout={50 * machines.length}><Card showModal={() => {
                 const modalProps: IModal = {
@@ -50,7 +50,7 @@ const MachinesPage = () => {
                     body: <AddMachineModal></AddMachineModal>
                 }
                 setModalProps(modalProps)
-            }} className="hidable" isAddButton={true}></Card></ShowTimer>}
+            }} isAddButton={true}></Card></ShowTimer>}
         </div>
     </div>
 }

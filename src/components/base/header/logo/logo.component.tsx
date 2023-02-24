@@ -7,7 +7,7 @@ interface IProps {
 }
 
 const Logo = ({ className }: IProps) => {
-    return <Link to="/home" className={`hidable logo-container ${className}`}>
+    return <Link to="/home" className={`logo-container ${className}`}>
         <img src={pizzaLogo} alt="" />
         <p><span className='v'>P</span>izzeta</p>
     </Link>

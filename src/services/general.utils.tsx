@@ -32,6 +32,9 @@ export async function sendRequest(path: string = "", requestType: string = Reque
     return null;
 }
 
+
+const generateRandomNumber = (n: number) => ((Math.ceil(Math.random() * 10)) % n);
+
 const generateRandomUUID = () => uuidv4();
 
-export { setElementOpacity, generateRandomUUID }
+export { setElementOpacity, generateRandomUUID, generateRandomNumber }
