@@ -24,7 +24,8 @@ function App() {
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/machines" element={<MachinesPage />} />
                 <Route path="/manage-food" element={<ManageFoodPage />} />
-                <Route path="/management" element={<ManagementPage />} />
+                <Route path="/management" element={<Navigate to="/management/dashboard" />} />
+                <Route path="/management/:section" element={<ManagementPage />} />
               </Routes>
             </ModalProvider>
           </NotificationProvider>

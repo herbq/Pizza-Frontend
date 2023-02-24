@@ -45,3 +45,10 @@
 .management-container .header .callout p:last-child {
   font-size: 21px;
 }
+
+.management-container .charts-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 13px;
+}

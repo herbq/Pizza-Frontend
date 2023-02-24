@@ -5,25 +5,28 @@ import Button from '../../../common/button/button.component';
 import './sliding-list.css'
 
 interface IProps {
+  className?: string,
   icon: any,
   title: string,
 }
 
-const SlidingList = ({ icon, title }: IProps) => {
+const SlidingList = ({ className, icon, title }: IProps) => {
   const [isExtended, toggleIsExtended] = useToggle(false)
 
   const msgs = [`Machine #1234 is out of stock!`, `Machine #1234 temperature sensor isn't working!`, `Machine #1234 temperature sensor isn't working!`, `Machine #1234 temperature sensor isn't working!`]
 
-  return <div className="sliding-list-container">
+  return <div className={`sliding-list-container ${className}`}>
     <div className='header'><p> <FontAwesomeIcon icon={icon}></FontAwesomeIcon> {title}</p> <Button disabled={(msgs?.length <= 3)} onClick={toggleIsExtended}
       className={`extend${isExtended ? ` active` : ``}`}><FontAwesomeIcon icon={faAngleDown}></FontAwesomeIcon></Button></div>
     <div className='body'>
-      {/* You're all good! */}
-      <ul>
-        {
-          msgs.map((msg, i) => (i < 3 || isExtended ? <li>{msg}</li> : null))
-        }
-      </ul>
+      {msgs.length == 0 ?
+        <p>You're all good!</p>
+        : <ul>
+          {
+            msgs.map((msg, i) => (i < 3 || isExtended ? <li>{msg}</li> : null))
+          }
+        </ul>
+      }
       {(!isExtended && msgs?.length > 3) ? <FontAwesomeIcon onClick={toggleIsExtended} className='load-more-icon' icon={faAnglesDown}></FontAwesomeIcon> : null}
     </div>
   </div>

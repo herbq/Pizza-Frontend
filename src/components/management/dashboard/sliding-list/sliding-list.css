@@ -30,6 +30,11 @@
   margin-right: 2px;
 }
 
+.sliding-list-container .header p .svg-inline--fa
+ {
+  color: rgb(212, 0, 0);
+}
+
 .sliding-list-container .header .extend {
   display: flex;
   justify-content: center;
