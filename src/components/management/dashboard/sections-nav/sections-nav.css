@@ -1,4 +1,5 @@
 .sections-nav-container {
+  position: relative;
   background-color: transparent;
   border: 1px solid rgb(174, 174, 174);
   padding: 15px;
@@ -6,6 +7,38 @@
   background-color: white;
   width: fit-content;
   height: fit-content;
+  transition: .3s all;
+  overflow: hidden;
+}
+
+.sections-nav-container .normal-menu {
+  position: relative;
+}
+
+.sections-nav-container .machines-menu {
+  position: absolute;
+  top: 15px;
+  left: calc(100% + 7px);
+  height: 190px;
+}
+
+.sections-nav-container .machines-menu .scrollable::-webkit-scrollbar {
+  display: none;
+}
+
+.sections-nav-container .machines-menu .scrollable {
+  position: relative;
+  overflow-y: scroll;
+  height: 152px;
+  padding-right: 3px;
+}
+
+.sections-nav-container .nav {
+  transition: .2s all;
+}
+
+.sections-nav-container.machine .nav {
+  transform: translateX(-107%);
 }
 
 .sections-nav-container .section {

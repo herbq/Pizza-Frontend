@@ -12,7 +12,9 @@
   position: relative;
   -webkit-animation: rotate 13s linear infinite;
   animation: rotate 13s linear infinite;
-  scale: 0.35
+  scale: 0.35;
+  position: relative;
+  top: -20px;
 }
 
 @-webkit-keyframes rotate {

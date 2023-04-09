@@ -11,9 +11,6 @@ import AddMachineModal from '../../components/modal/add-machine/add-machine.moda
 
 const MachinesPage = () => {
 
-    // const [isModalShown, setModalShown] = useState(false)
-    // const [modalContent, setModalContent] = useState<IMachine>({});
-
     const { setModalProps } = useContext(ModalContext)
 
     const [isAddModalShown, setAddModalShown] = useState(false)

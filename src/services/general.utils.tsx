@@ -28,8 +28,7 @@ export async function sendRequest(path: string = "", requestType: string = Reque
         body
     });
     if (requestType == RequestType.GET) return response.json();
-    if (requestType == RequestType.PUT) return response;
-    return null;
+    if (requestType == RequestType.PUT || requestType == RequestType.POST) return response;
 }
 
 

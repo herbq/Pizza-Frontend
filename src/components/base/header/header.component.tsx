@@ -18,7 +18,7 @@ const Header = () => {
 
   const logout = () => {
     pushNotification(NotificationType.Notice, `You have logged out`)
-    setUser('') // solve this.
+    setUser(null)
   }
 
   return (

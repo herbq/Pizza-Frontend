@@ -37,7 +37,7 @@
     border: 1px solid rgb(171, 171, 171);
 }
 
-.login-form img {
+.login-form .login-drawing {
     position: absolute;
     width: 150px;
     top: -60px;
@@ -46,7 +46,7 @@
     animation: 15s pizza-rotate infinite;
 }
 
-.login-form img:hover {
+.login-form .login-drawing:hover {
     filter: saturate(5);
 }
 
@@ -70,6 +70,50 @@
 .login-form .content {
     margin-top: 20px;
     margin-bottom: 40px;
+}
+
+.login-form .verify-container {
+    display: flex;
+    align-items: flex-end;
+}
+
+.login-form .content .verify-container .input-group {
+    width: 78%;
+}
+
+.login-form .content .verify-container input {
+    width: 85%
+}
+
+.login-form .content .verify-container .verify-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    width: 27%;
+    height: 36px;
+    border: 1px solid rgb(206, 212, 218);
+    border-radius: 5px;
+    font-weight: 600;
+    color: rgb(49, 49, 49);
+    background-color: rgba(255, 0, 0, 0.04);
+    cursor: pointer;
+    transition: .3s all;
+}
+
+.login-form .content .verify-container .verify-button.verified {
+    background-color: rgba(77, 255, 0, 0.04);
+    cursor: default;
+}
+
+.login-form .content .verify-container .verify-button:active {
+    scale: 0.98;
+}
+
+.login-form .content .verify-container .verify-button img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
 }
 
 .login-form p {
@@ -98,7 +142,7 @@
     text-align: left;
 }
 
-.login-form .button {
+.login-form .submit-button {
     margin-top: 35px;
     width: 100%;
     height: fit-content;
@@ -109,10 +153,10 @@
     border-radius: 8px;
 }
 
-.login-form .button:hover {
+.login-form .submit-button:hover {
     background-color: var(--main-button-hover);
 }
 
-.login-form .button:active {
+.login-form .submit-button:active {
     background-color: var(--main-button-active);
 }

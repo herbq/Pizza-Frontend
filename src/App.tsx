@@ -9,6 +9,7 @@ import ManageFoodPage from "./pages/manage-food/manage-food.component";
 import ModalProvider from "./contexts/modal.context";
 import HomePage from "./pages/home/home.component";
 import ManagementPage from "./pages/management/management.component";
+import AuthGuard from "./components/base/auth-guard/auth-guard.component";
 
 function App() {
   return (

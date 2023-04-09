@@ -9,6 +9,7 @@ import SectionsNav from '../../components/management/dashboard/sections-nav/sect
 import DashboardSection from './sections/dashboard/dashboard.component';
 import { useParams } from 'react-router';
 import MachinesInfoSection from './sections/machines/machines-info.component';
+import AccountSettingsSection from './sections/account-settings/account-settings.component';
 
 const ManagementPage = () => {
   const { section } = useParams();
@@ -17,6 +18,7 @@ const ManagementPage = () => {
       <SectionsNav></SectionsNav>
       {section == `dashboard` && <DashboardSection></DashboardSection>}
       {section == `machines-info` && <MachinesInfoSection></MachinesInfoSection>}
+      {section == `account` && <AccountSettingsSection></AccountSettingsSection>}
     </div>
   </div>
 }

@@ -20,6 +20,7 @@
     appearance: none;
     border-radius: 7px;
     transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    transition: .3s all;
 }
 
 .input-group>label {
@@ -43,4 +44,8 @@
     border-color: #86b7fe;
     outline: 0;
     box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%);
+}
+
+.input-group>input:disabled {
+    background-color: rgba(77, 255, 0, 0.04);
 }

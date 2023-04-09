@@ -16,7 +16,6 @@ const Input = ({ label, required, ...props }: IProps) => {
                     <label>
                         <span>{label}</span>
                         &nbsp;
-                        {required && <span>*</span>}
                     </label>
                 ) : null
             }

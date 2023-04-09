@@ -1,11 +1,21 @@
-import React, { ReactNode, useState } from "react";
-import { IUser } from "../interfaces/user.interface";
+import React, { Dispatch, ReactNode, SetStateAction, useEffect, useState } from "react";
+import { Users } from "../interfaces/user.interface";
+
+interface IContext {
+    user: Users.IUser | null,
+    setUser: Dispatch<SetStateAction<Users.IUser | null>>,
+}
 
 
-export const UserContext = React.createContext<IUser>({ user: null, setUser: () => { } });
+export const UserContext = React.createContext<IContext>({ user: null, setUser: () => { } });
 
 const UserProvider = ({ children }: { children: ReactNode }) => {
-    const [user, setUser] = useState<string | null>(null);
+    const [user, setUser] = useState<Users.IUser | null>(null);
+
+    useEffect(() => {
+        console.log(`user updated`);
+        localStorage.setItem(`token`, user?.token as any);
+    }, [user])
 
     return <UserContext.Provider value={{ user, setUser }}>
         {children}

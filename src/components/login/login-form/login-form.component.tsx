@@ -8,52 +8,48 @@ import { NotificationType } from '../../base/notification/notification-body/noti
 import Input from '../../common/input/input.component';
 import Button from '../../common/button/button.component';
 import pizzaSketch from '../../../assets/pizza-sketch.png'
+import { useLogin } from '../../../hooks/login.hook';
+import { GoogleLogin, useGoogleLogin, UseGoogleLoginOptions } from '@react-oauth/google';
+import { useLocation } from 'react-router';
+import googleLogo from '../../../assets/google-logo.png';
+import DoubleIcon from '../../common/double-icon/double-icon.component';
+import { faApple, faGoogle } from '@fortawesome/free-brands-svg-icons';
+import { faCertificate, faCheck } from '@fortawesome/free-solid-svg-icons';
+
+
 
 const LoginForm = () => {
-    const [username, setUsername] = useState<string>('')
-    const [password, setPassword] = useState<string>('')
-    const [isRegisterLayout, toggleRegisterLayout] = useToggle(false)
-    const { setUser } = useContext(UserContext)
-    const { pushNotification } = useContext(NotificationContext)
+    const { inputs, others } = useLogin();
 
-
-    const submitHandler = (e: any) => {
-        e.preventDefault();
-
-        if (isRegisterLayout) {
-            if (!userExists(username)) {
-                addNewUser(username, password)
-                setUser(username)
-                pushNotification(NotificationType.Success, `You have created a new account`)
-                return
-            }
-            pushNotification(NotificationType.Failed, `Username is already in use`)
-        } else {
-            const user = getAuthenticated(username, password)
-            if (user == null) {
-                pushNotification(NotificationType.Failed, `Wrong username or password`)
-                return
-            }
-            setUser(user)
-            pushNotification(NotificationType.Success, `You have signed in to your account`)
-        }
-    }
-
-    return <form className="login-form" onSubmit={submitHandler}>
-        <img src={pizzaSketch} alt="" />
-        <h1>Agent {isRegisterLayout ? `Register` : `Login`}</h1>
-        <h2>Hey, Enter your details to {isRegisterLayout ? `sign up a new account` : `sign in to your account`}</h2>
-        <div className='content'>
-            <Input required={false} onChange={(e: any) => setUsername(e.target.value)} value={username} label='Username' placeholder='john_doe'></Input>
-            <Input required={false} onChange={(e: any) => setPassword(e.target.value)} value={password} label='Password' placeholder='********' type={`password`}></Input>
-            <p className='align-left'>Forgot Password?</p>
-            <Button type={`submit`}>{isRegisterLayout ? `Sign Up` : `Sign In`}</Button>
-            {
-                isRegisterLayout ?
-                    <p>Already have an account <span onClick={() => { toggleRegisterLayout() }}>Sign In</span></p>
-                    : <p>Don't have an account? <span onClick={() => { toggleRegisterLayout() }}>Sign Up</span></p>
-            }
-        </div>
+    return <form className="login-form" onSubmit={others.submitHandler}>
+        <img className='login-drawing' src={pizzaSketch} alt="" />
+        {others.isRegisterLayout ? <>
+            <h1>Agent {`Register`}</h1>
+            <h2>Hey, Enter your details to sign up a new account</h2>
+            <div className='content'>
+                <div className='verify-container'>
+                    <Input disabled={others.googleUser} required={true} onChange={(e: any) => inputs.setEmail(e.target.value)} value={inputs.email} label='Email' placeholder='john@example.com'></Input>
+                    <button onClick={() => { !others.googleUser && others.signIn() }} type='button' className={`verify-button${others.googleUser ? ` verified` : ``}`}>
+                        <DoubleIcon defaultIcon={faGoogle} activeIcon={faCheck} active={others.googleUser != null}></DoubleIcon>
+                        Verify
+                    </button>
+                </div>
+                <Input required={true} onChange={(e: any) => inputs.setPassword(e.target.value)} value={inputs.password} label='Password' placeholder='********' type={`password`}></Input>
+                <Input required={true} onChange={(e: any) => inputs.setConfirmPassword(e.target.value)} value={inputs.confirmPassword} label='Confirm Password' placeholder='********' type={`password`}></Input>
+                <Button className='submit-button' type={`submit`}>Sign Up</Button>
+                <p>Already have an account <span onClick={() => { others.toggleLayout() }}>Sign In</span></p>
+            </div>
+        </> : <>
+            <h1>Agent Login</h1>
+            <h2>Hey, Enter your details to sign in to your account</h2>
+            <div className='content'>
+                <Input required={true} onChange={(e: any) => inputs.setEmail(e.target.value)} value={inputs.email} label='Email' placeholder='john@example.com'></Input>
+                <Input required={true} onChange={(e: any) => inputs.setPassword(e.target.value)} value={inputs.password} label='Password' placeholder='********' type={`password`}></Input>
+                <p className='align-left'>Forgot Password?</p>
+                <Button className='submit-button' type={`submit`}>Sign In</Button>
+                <p>Already have an account <span onClick={() => { others.toggleLayout() }}>Sign In</span></p>
+            </div>
+        </>}
     </form>
 }
 
